@@ -1,0 +1,17 @@
+let capOpj = {
+  cName:"",
+  shift:"",
+  salary:"",
+  hireDate:"",
+  debt:"",
+  targetCounter:"",
+  Punctuality:"",
+  places:"",
+  followWeights:"",
+  treatPlayers:"",
+  generalLook:"",
+  Delay:"",
+  unAttendance:"",
+  bonus:"",
+  discounts:"",
+}

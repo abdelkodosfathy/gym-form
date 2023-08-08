@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+</head>
+<body>
+  <form>
+    <label for="day-date">:التاريخ</label>
+    <input type="date" id="day-date" name="day-date"><br>
+    
+    <label for="captain">:الكابتن</label>
+    <input type="text" id="captain" name="captain" list="captain_values"><br>
+    <datalist id="captain_values">
+      <option value="احمد">
+      <option value="عبدالرحمن">
+      <option value="سعيد">
+      <option value="سيف">
+      <option value="هنا">
+      <option value="عمرو">
+    </datalist>
+
+    <!-- دي حاجات ثابتة المفروض تبقي ليها صفحة تانية لو اضطرينا نلعب ف الثوابت لاسمح الله بس سيبها عشان متنساش -->
+    <!-- <label for="shifts">شيفتات:</label>
+    <input type="text" id="shifts" name="shifts"><br>
+  
+    <label for="salary">المرتب:</label>
+    <input type="text" id="salary" name="salary"><br>
+  
+    <label for="hire_date">تاريخ التعيين:</label>
+    <input type="date" id="hire_date" name="hire_date"><br> -->
+  
+    <label for="loan">:سلفة</label>
+    <input type="number" id="loan" name="loan"><br>
+    
+    <label for="target_counter">:تارجت كونتر</label>
+    <input type="number" id="target_counter" name="target_counter"><br>
+  
+    <table>
+      <tr>
+        <td>
+          <label for="punctuality">:انضباط المواعيد</label>
+          <span id="punctuality_value">5</span>
+          <input type="range" id="punctuality" name="punctuality" min="1" max="5" value="5">
+        </td>
+        <td>
+          <label for="commitment">:الالتزام بالاماكن</label>
+          <span id="commitment_value">5</span>
+          <input type="range" id="commitment" name="commitment" min="1" max="5"  value="5">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="weight_tracking">:متابعة اوزان</label>
+          <span id="weight_tracking_value">5</span>
+          <input type="range" id="weight_tracking" name="weight_tracking" min="1" max="5"  value="5">
+        </td>
+        <td>
+          <label for="player_treatment">:معاملة اللاعبين</label>
+          <span id="player_treatment_value">5</span>
+          <input type="range" id="player_treatment" name="player_treatment" min="1" max="5"  value="5">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="appearance">:المظهر العام</label>
+          <span id="appearance_value">5</span>
+          <input type="range" id="appearance" name="appearance" min="1" max="5"  value="5">
+        </td>
+        <td>
+          <label for="delay">:التأخير</label>
+          <span id="delay_value">5</span>
+          <input type="range" id="delay" name="delay" min="1" max="5"  value="5">
+        </td>
+      </tr>
+    </table>
+    
+    <!-- يبقي في اوبشنز يا اما بأذن او غياب بدون اذن -->
+    <label for="absence">:غياب</label>
+    <input type="text" id="absence" name="absence" list="absence-list">
+    <datalist id="absence-list">
+      <option value="غياب بأذن"></option>
+      <option value="غياب بدون أذن"></option>
+    </datalist>
+  
+    <label for="overtime">:الاضافي</label>
+    <input type="text" id="overtime" name="overtime">
+    
+    <!-- الخصومات يبقي ليها اوبجكت متكون من رقم يعبر عن قيمة الخصم ونص فيه السبب -->
+    <p id="deductions-title">:الخصومات</p>
+    <div style="background-color: rgb(202, 202, 202); border-radius: 5px; padding: 5px;">
+      <label for="deductions">:القيمة</label>
+      <input type="number" id="deductions" name="deductions"><br>
+      
+      <label for="reason">:السبب</label>
+      <input type="text" id="reason" name="reason"><br>
+    </div>
+
+    <!-- لوالتأخير وصل ل ربع ساعة علي مدار الايام يخصمله خمسين جنيه ويكتب دا في سبب الخصومات  -->
+    <!-- الخصم اللي هيتكتب هو القيمة والسبب اللي هو التأخير الربع ساعة والخمسين جنيه -->
+    <label for="attendance">:الحضور</label>
+    <input type="time" id="attendance" name="attendance"><br>
+
+    <input type="submit" value="Submit">
+  </form>
+  
+  <!-- script take the value of the range slider and show it  -->
+  <script>
+    document.getElementById("punctuality").addEventListener("input", function() {
+      document.getElementById("punctuality_value").textContent = this.value;
+    });
+  
+    document.getElementById("commitment").addEventListener("input", function() {
+      document.getElementById("commitment_value").textContent = this.value;
+    });
+  
+    document.getElementById("weight_tracking").addEventListener("input", function() {
+      document.getElementById("weight_tracking_value").textContent = this.value;
+    });
+  
+    document.getElementById("player_treatment").addEventListener("input", function() {
+      document.getElementById("player_treatment_value").textContent = this.value;
+    });
+  
+    document.getElementById("appearance").addEventListener("input", function() {
+      document.getElementById("appearance_value").textContent = this.value;
+    });
+  
+    document.getElementById("delay").addEventListener("input", function() {
+      document.getElementById("delay_value").textContent = this.value;
+    });
+  </script>
+</body>
+</html>
